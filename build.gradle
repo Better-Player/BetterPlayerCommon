@@ -12,9 +12,9 @@ repositories {
 dependencies {
 }
 
-artifacts {
-    archives sourcesJar
-    archives javadocJar
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
 
 publishing {
