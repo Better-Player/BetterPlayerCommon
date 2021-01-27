@@ -1,9 +1,41 @@
 plugins {
     id 'java-library'
+    id 'maven-publish'
 }
+
+group = 'net.betterplayer'
+version = '1.0.0'
 
 repositories {
 }
 
 dependencies {
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			artifactId = 'common'
+			from components.java
+			
+			pom {
+				name = 'BetterPlayer Common'
+				description = 'Common stuff for BetterPlayer'
+				url = 'https://betterplayer.net'
+				
+				developers {
+					developer {
+						id = 'thedutchmc'
+						name = 'Tobias de Bruijn'
+						email = 't.debruijn@thedutchmc.nl'
+					}	
+				}
+			}	
+		}
+	}
 }
