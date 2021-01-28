@@ -1,4 +1,4 @@
-package net.betterplayer.auth;
+package net.betterplayer.common;
 
 import java.util.function.Function;
 
